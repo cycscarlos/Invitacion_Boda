@@ -1,0 +1,671 @@
+/* --------------------------------*/
+/* -----> Custom Properties <----- */
+/*           (Variables)           */
+/* ------------------------------- */
+
+:root {
+  --first-color: #ff4c00;
+  --first-color-opacity: rgba(255, 76, 0, 0.75);
+  --black-color-opacity: rgba(0, 0, 0, 0.5);
+  --white-color-opacity: rgba(255, 255, 255, 0.3);
+  --second-color: #273b47;
+  --second-alpha-color: rgba(39, 59, 71, 0.75);
+  --third-color: #1c3643;
+  --third-alpha-color: rgba(28, 54, 67, 0.75);
+  --white-color: #fff;
+  --gray-light-color: #f3f3f3;
+  --gray-color: #ccc;
+  --gray-dark-color: #666;
+  --black-color: #000;
+  --link-color: #509ee3;
+  --title-color: #333;
+  --text-color: #222;
+  --font: "Raleway", sans-serif;
+  --font2: "Alex Brush", cursive;
+  --font3: "Allura", cursive;
+  --font4: "Dancing Script", cursive;
+  --max-width: 1400px;
+  --header-height: 4rem;
+}
+
+/* ------------------------------*/
+/* ----->      Reset      <----- */
+/* ----------------------------- */
+
+html {
+  box-sizing: border-box;
+  font-family: var(--font);
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  /* overflow: hidden; */
+}
+
+[id] {
+  scroll-margin-top: 2ex;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: all 0.5s ease-out;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+h5 {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+h6 {
+  margin: 0;
+  font-size: 0.7rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  line-height: 1.6;
+}
+/* --------------------------------*/
+/* ----->  Re-usable code   <----- */
+/*           (Utilities)           */
+/* ------------------------------- */
+
+.section {
+  padding: 2rem 1rem;
+}
+.section2 {
+  padding: 0 1rem;
+}
+
+.container {
+  margin: auto;
+  max-width: var(--max-width);
+}
+
+.section-title {
+  border-top: thin solid var(--first-color);
+  border-bottom: thin solid var(--first-color);
+  margin: 2rem auto;
+  padding: 0.5rem 1rem;
+  width: 250px;
+  text-align: center;
+  color: var(--title-color);
+}
+
+/* Zona Página Principal: HERO-IMAGE */
+
+.hero-image-home {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+  background-image: url("../img/img1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.hero-image-opacity {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--hero-opacity-color);
+}
+
+/* Zona Página Principal: ÁREA de CONTENIDO */
+
+.hero-image-content {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Zona Página Principal: MENU DE NAVEGACIÓN  */
+
+.menu {
+  position: absolute;
+  top: 100px;
+  width: 100%;
+}
+
+.menu a {
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white-color);
+  font-family: var(--font);
+}
+
+.menu a:hover {
+  color: var(--white-color);
+  opacity: 0.5;
+}
+
+/* Zona Página Principal: TITULOS  */
+
+.hero-image-titles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-around;
+  align-items: center;
+}
+
+.hero-image-titles h2 {
+  font-size: 4vw;
+  font-weight: lighter;
+  color: var(--white-color);
+}
+
+.hero-image-titles h2 span {
+  font-size: 2vw;
+  letter-spacing: 0.5px;
+  opacity: 0.3;
+}
+
+.hero-image-titles b {
+  font-size: 15vw;
+  font-weight: lighter;
+  opacity: 0.5;
+}
+
+/* Zona Página Principal: LA FECHA  */
+
+.hero-image-fecha {
+  position: absolute;
+  bottom: 2rem;
+}
+
+.hero-image-fecha h4 {
+  font-size: 0.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  font-family: var(--font);
+  font-weight: lighter;
+  color: var(--white-color);
+}
+
+/* Media Queries para iPhone 5/SE */
+@media screen and (max-width: 320px) {
+  .hero-image-content .menu a {
+    margin: auto;
+    padding: 0 0.5rem;
+    font-size: 0.5rem;
+  }
+  .hero-image-fecha h4 {
+    font-size: 0.3rem;
+  }
+}
+
+/* Media Queries para iPhone XS */
+@media screen and (max-width: 414px) {
+  .hero-image-content .menu a {
+    margin: auto;
+    padding: 0 0.5rem;
+    font-size: 0.7rem;
+  }
+  .hero-image-fecha h4 {
+    font-size: 0.4rem;
+  }
+}
+
+/* Zona MI HISTORIA */
+
+.history-content {
+  margin: auto;
+  width: 80%;
+  text-align: center;
+}
+
+/* Media Queries para iPhone 5/SE */
+@media screen and (max-width: 320px) {
+  .section-title {
+    font-size: 1.2rem;
+  }
+  .history-content {
+    font-size: 0.7rem;
+  }
+}
+
+/* Zona ITINERARIO: HERO-IMAGE */
+
+.hero-image-itinerario {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+  background-image: url("../img/img2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+}
+/* Esta clase no ha sido usada */
+
+/* .hero-image-itinerario-opacity {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--hero-opacity-color);
+} */
+
+/* Zona ITINERARIO: ÁREA de CONTENIDO */
+
+.itinerario-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Zona ITINERARIO: TITULOS  */
+
+.itinerario-titles {
+  margin: auto;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 30% 5% 30% 5% 30%;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Zona ITINERARIO: Barras  */
+
+.itinerario-titles .barras {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.itinerario-titles b {
+  font-size: 25vw;
+  font-weight: lighter;
+  opacity: 0.5;
+  color: var(--white-color);
+}
+
+/* Zona ITINERARIO: Titulos "Días x"  */
+
+.itinerario-titles .dias {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.itinerario-titles .dias h2 {
+  font-size: 2rem;
+  font-weight: lighter;
+  color: var(--white-color);
+  font-family: var(--font3);
+}
+
+.itinerario-titles .dias .horarios {
+  width: 100%;
+  margin: 4rem auto;
+  list-style: none;
+}
+.itinerario-titles .dias .horarios li {
+  text-decoration: none;
+  text-align: left;
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  color: var(--black-color);
+  font-family: var(--font3);
+}
+
+.ocultar {
+  visibility: hidden;
+}
+
+/* Media Queries para iPhone 5/SE */
+@media screen and (max-width: 320px) {
+  .itinerario-content .section-title h2 {
+    font-size: 1.2rem;
+  }
+  .itinerario-titles {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+  }
+  .itinerario-titles .barras {
+    display: none;
+  }
+  .itinerario-content .itinerario-titles .dias h2 {
+    font-size: 1.2rem;
+    color: var(--first-color);
+  }
+  .itinerario-titles .dias .horarios {
+    margin: 2rem auto;
+  }
+  .itinerario-titles .dias .horarios li {
+    font-size: 1.2rem;
+  }
+}
+
+/* Media Queries para iPhone XS */
+@media screen and (max-width: 414px) {
+  .section-title h2 {
+    font-size: 1.5rem;
+  }
+  .itinerario-titles {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+  }
+  .itinerario-titles .barras {
+    display: none;
+  }
+  .itinerario-titles .dias h2 {
+    font-size: 1.5rem;
+    color: var(--first-color);
+  }
+}
+
+/* Zona REGISTRO: HERO-IMAGE */
+
+.hero-image-registro {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+  background-image: url("../img/img3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+}
+/* Esta clase no ha sido usada */
+
+/* .hero-image-contact-opacity {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--hero-opacity-color);
+} */
+
+/* Zona REGISTRO: Contenidos  */
+
+.hero-image-registro-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Zona REGISTRO: Titulo  */
+
+.title-registro {
+  width: 250px;
+  margin: 2rem auto;
+  padding: 1rem 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--title-color);
+}
+
+/*  Zona REGISTRO: Formulario */
+
+.box-shadow-form {
+  /* box-shadow: 0.75rem 0.75rem 2.5rem rgba(0, 0, 0, 0.5); */
+  box-shadow: 0px 2.5px 2.5px 1px rgba(0, 0, 0, 0.5);
+  /* box-shadow: 0 0 0 0px #000, 0 0 0 1px grey, 0 10px 10px 2.5px #000; */
+}
+
+.box-shadow-inputs {
+  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+.box-shadow-white {
+  box-shadow: 0.75rem 0.75rem 2.5rem rgba(255, 255, 255, 0.5);
+}
+
+.registro-form {
+  margin: 2rem auto;
+  padding: 1rem;
+  width: 400px;
+  max-width: 400px;
+  border-radius: 3px;
+}
+
+.registro-form > * {
+  padding: 0.5rem;
+  margin: 1rem auto;
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.registro-form input,
+.registro-form label {
+  font-size: 0.85rem;
+  font-family: var(--font);
+  background: var(--white-color-opacity);
+  border: 0;
+}
+
+.registro-form select {
+  border-bottom: thin solid var(--first-color);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  padding: 1em 4em 1em 1.5em;
+  background: rgba(77, 80, 97, 0.5);
+  color: #fff;
+  font-size: 0.8rem;
+  font-family: var(--font);
+}
+
+.registro-form input[type="text"] {
+  border: 0;
+  padding-left: 0;
+}
+
+.registro-form input[type="email"] {
+  border: 0;
+  padding-left: 0;
+}
+
+.registro-form label {
+  color: var(--white-color);
+  border: 0;
+  padding-left: 0;
+}
+
+.registro-btn {
+  display: inline-block;
+  width: 150px;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white-color);
+  background: var(--white-color-opacity);
+  border: 0;
+  letter-spacing: 1px;
+  font-family: var(--font);
+}
+
+.registro-form input[type="submit"] {
+  margin-top: 0;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+
+.registro-form input[type="submit"]:hover {
+  opacity: 0.75;
+  background-color: var(--first-color);
+}
+
+.registro-form *::placeholder {
+  color: var(--text-color);
+}
+
+/*  Zona REGISTRO: Ventana Modal */
+
+.modal#gracias:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--black-color-opacity);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 1s;
+}
+
+.modal-content {
+  position: absolute;
+  right: 5rem;
+}
+
+.contact-form-response {
+  padding: 1rem;
+  width: 300px;
+  border-radius: 3px;
+  text-align: center;
+  color: var(--white-color);
+  background-color: var(--white-color-opacity);
+}
+
+.contact-form-response svg {
+  margin-top: 2rem;
+  width: 4rem;
+  height: 4rem;
+  fill: var(--first-color);
+}
+
+/* Media Queries para iPhone 5/SE */
+@media screen and (max-width: 320px) {
+  .hero-image-registro-content .section-title h2 {
+    font-size: 1.2rem;
+  }
+  .registro-form {
+    margin: 2rem auto;
+    padding: 1rem;
+    width: 250px;
+    max-width: 250px;
+    border-radius: 3px;
+  }
+  .registro-form input,
+  .registro-form label {
+    font-size: 0.7rem;
+  }
+  .registro-form select {
+    font-size: 0.7rem;
+    margin: 0;
+  }
+  .modal-content {
+    left: 2.4rem;
+  }
+  .contact-form-response {
+    width: 250px;
+  }
+}
+
+/* Media Queries para iPhone XS */
+@media screen and (max-width: 414px) {
+  .section-title h2 {
+    font-size: 1.5rem;
+  }
+  .registro-form {
+    margin: 4rem auto;
+    padding: 1rem;
+    width: 250px;
+    max-width: 250px;
+    border-radius: 3px;
+  }
+  .registro-form input,
+  .registro-form label {
+    font-size: 0.7rem;
+  }
+  .registro-form .custom-select select {
+    font-size: 0.7rem;
+    margin: 0;
+  }
+  .modal-content {
+    left: 2.4rem;
+  }
+  .contact-form-response {
+    width: 250px;
+  }
+}
+
+/*  Zona de FOOTER */
+
+.footer {
+  color: var(--text-color);
+  background-color: transparent;
+  /* background-color: rgba(80, 158, 227, 0.5); */
+  /* background-color: var(--third-color); */
+  /* margin-bottom: var(--header-height); */
+  padding: 0.5rem;
+  text-align: center;
+  margin-bottom: 0;
+}
+.footer a {
+  color: var(--first-color);
+  font-size: 1rem;
+}
+.footer a span {
+  color: var(--first-color);
+  font-size: 0.7rem;
+  font-style: italic;
+}
