@@ -666,6 +666,7 @@ p {
 }
 .footer a span {
   color: var(--first-color);
-  font-size: 0.7rem;
+  font-size: 0.9rem;
+  font-weight: 400;
   font-style: italic;
 }
