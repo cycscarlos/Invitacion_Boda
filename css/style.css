@@ -26,6 +26,11 @@
   --font4: "Dancing Script", cursive;
   --max-width: 1400px;
   --header-height: 4rem;
+
+  /* Copyright variables */
+  --copyright-color: rgb(34, 34, 34, 0.6);
+  --copyright-small-font-size: 0.813rem;
+  --copyright-smaller-font-size: 0.75rem;
 }
 
 /* ------------------------------*/
@@ -102,6 +107,7 @@ img {
 p {
   line-height: 1.6;
 }
+
 /* --------------------------------*/
 /* ----->  Re-usable code   <----- */
 /*           (Utilities)           */
@@ -120,8 +126,7 @@ p {
 }
 
 .section-title {
-  border-top: thin solid var(--first-color);
-  border-bottom: thin solid var(--first-color);
+  text-transform: uppercase;
   margin: 2rem auto;
   padding: 0.5rem 1rem;
   width: 250px;
@@ -285,13 +290,6 @@ p {
   background-position: center;
   background-attachment: scroll;
 }
-/* Esta clase no ha sido usada */
-
-/* .hero-image-itinerario-opacity {
-  width: 100%;
-  min-height: 100vh;
-  background-color: var(--hero-opacity-color);
-} */
 
 /* Zona ITINERARIO: ÁREA de CONTENIDO */
 
@@ -424,13 +422,6 @@ p {
   background-position: center;
   background-attachment: scroll;
 }
-/* Esta clase no ha sido usada */
-
-/* .hero-image-contact-opacity {
-  width: 100%;
-  min-height: 100vh;
-  background-color: var(--hero-opacity-color);
-} */
 
 /* Zona REGISTRO: Contenidos  */
 
@@ -455,9 +446,7 @@ p {
 /*  Zona REGISTRO: Formulario */
 
 .box-shadow-form {
-  /* box-shadow: 0.75rem 0.75rem 2.5rem rgba(0, 0, 0, 0.5); */
   box-shadow: 0px 2.5px 2.5px 1px rgba(0, 0, 0, 0.5);
-  /* box-shadow: 0 0 0 0px #000, 0 0 0 1px grey, 0 10px 10px 2.5px #000; */
 }
 
 .box-shadow-inputs {
@@ -490,14 +479,25 @@ p {
   font-family: var(--font);
   background: var(--white-color-opacity);
   border: 0;
+
+  /* New! 26-3-2022 */
+  background: rgba(77, 80, 97, 0.5);
+  color: var(--white-color);
 }
 
+/* New! 26-3-2022 */
+select,
+option {
+  background-color: teal;
+}
+
+/* Selección de posadas */
 .registro-form select {
   border-bottom: thin solid var(--first-color);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   padding: 1em 4em 1em 1.5em;
   background: rgba(77, 80, 97, 0.5);
-  color: #fff;
+  color: var(--white-color);
   font-size: 0.8rem;
   font-family: var(--font);
 }
@@ -527,7 +527,7 @@ p {
   text-align: center;
   text-decoration: none;
   color: var(--white-color);
-  background: var(--white-color-opacity);
+  /* background: var(--white-color-opacity); New! */
   border: 0;
   letter-spacing: 1px;
   font-family: var(--font);
@@ -545,7 +545,8 @@ p {
 }
 
 .registro-form *::placeholder {
-  color: var(--text-color);
+  color: rgba(255, 255, 255, 0.2);
+  /* color: var(--text-color); New! */
 }
 
 /*  Zona REGISTRO: Ventana Modal */
@@ -653,20 +654,16 @@ p {
 .footer {
   color: var(--text-color);
   background-color: transparent;
-  /* background-color: rgba(80, 158, 227, 0.5); */
-  /* background-color: var(--third-color); */
-  /* margin-bottom: var(--header-height); */
   padding: 0.5rem;
   text-align: center;
   margin-bottom: 0;
+  font-size: var(--copyright-small-font-size);
 }
+
 .footer a {
-  color: var(--first-color);
-  font-size: 1rem;
+  color: var(--text-color);
+  text-decoration: underline;
 }
-.footer a span {
-  color: var(--first-color);
-  font-size: 0.9rem;
-  font-weight: 400;
-  font-style: italic;
+.footer a:hover {
+  color: var(--copyright-color); 
 }
